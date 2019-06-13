@@ -26,6 +26,11 @@ class DataGen(object):
     def set_full_ascii_charmap():
         DataGen.CHARMAP = ['', '', ''] + [chr(i) for i in range(32, 127)]
 
+    @staticmethod
+    def set_valid_ascii_charmap(valid_ascii):
+        print("valid_ascii:", valid_ascii)
+        DataGen.CHARMAP = ['', '', ''] + list(valid_ascii)
+
     def __init__(self,
                  annotation_fn,
                  buckets,

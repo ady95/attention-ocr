@@ -23,6 +23,8 @@ class Config(object):
     FORCE_UPPERCASE = False
     SAVE_FILENAME = False
     FULL_ASCII = False
+    VALID_ASCII = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+    # VALID_ASCII = '0123456789abcdefghijklmnopqrstuvwxyz'
 
     # Optimization
     NUM_EPOCH = 1000

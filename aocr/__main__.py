@@ -79,6 +79,11 @@ def process_args(args, defaults):
     parser_model.add_argument('--full-ascii', dest='full_ascii', action='store_true',
                               help=('use lowercase in addition to uppercase'))
     parser_model.set_defaults(full_ascii=defaults.FULL_ASCII)
+
+    parser_model.add_argument('--valid-ascii', dest='valid_ascii', metavar=defaults.VALID_ASCII,
+                                type=str, default=defaults.VALID_ASCII,
+                                help=('valid ascii'))
+
     parser_model.add_argument('--color', dest="channels", action='store_const', const=3,
                               default=defaults.CHANNELS,
                               help=('do not convert source images to grayscale'))
@@ -224,8 +229,12 @@ def main(args=None):
             )
             return
 
+
+
         if parameters.full_ascii:
             DataGen.set_full_ascii_charmap()
+        else:
+            DataGen.set_valid_ascii_charmap(parameters.valid_ascii)
 
         model = Model(
             phase=parameters.phase,
