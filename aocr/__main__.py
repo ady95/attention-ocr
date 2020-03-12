@@ -84,9 +84,14 @@ def process_args(args, defaults):
                                 type=str, default=defaults.VALID_ASCII,
                                 help=('valid ascii'))
 
-    parser_model.add_argument('--color', dest="channels", action='store_const', const=3,
+    # color 옵션을 channels로 변경함 (RGBA 4채널을 지원하기 위함)
+    # parser_model.add_argument('--color', dest="channels", action='store_const', const=3,
+    #                           default=defaults.CHANNELS,
+    #                           help=('do not convert source images to grayscale'))
+    parser_model.add_argument('--channels', dest="channels", 
+                              metavar=defaults.CHANNELS, type=int,
                               default=defaults.CHANNELS,
-                              help=('do not convert source images to grayscale'))
+                              help=('color channel number'))
     parser_model.add_argument('--no-distance', dest="use_distance", action="store_false",
                               default=defaults.USE_DISTANCE,
                               help=('require full match when calculating accuracy'))

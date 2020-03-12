@@ -23,8 +23,8 @@ class Config(object):
     FORCE_UPPERCASE = False
     SAVE_FILENAME = False
     FULL_ASCII = False
-    VALID_ASCII = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ'
-    # VALID_ASCII = '0123456789abcdefghijklmnopqrstuvwxyz'
+    # VALID_ASCII = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+    VALID_ASCII = '0123456789abcdefghijklmnopqrstuvwxyz'
 
     # Optimization
     NUM_EPOCH = 1000
@@ -41,7 +41,7 @@ class Config(object):
     LOAD_MODEL = True
     OLD_MODEL_VERSION = False
     TARGET_VOCAB_SIZE = 26+10+3  # 0: PADDING, 1: GO, 2: EOS, >2: 0-9, a-z
-    CHANNELS = 3  # number of color channels from source image (1 = grayscale, 3 = rgb)
+    CHANNELS = 1  # number of color channels from source image (1 = grayscale, 3 = rgb, 4=rgba)
 
     MAX_WIDTH = 200
     MAX_HEIGHT = 100
